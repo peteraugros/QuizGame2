@@ -15,7 +15,7 @@
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 
-<body>
+<body id="body">
  
        
     <h1 align="center">Quiz-Game!</h1>
@@ -24,10 +24,13 @@
     </div>
     <br>
     <div align="center">
-    <button onclick="setUp()" type="button" class="btn btn-primary button" id= "btn1">Begin Quiz</button><br>
-    <button onclick="setUp()" type="button" class="btn btn-primary button" id= "btn2">Begin Quiz</button><br>
-    <button onclick="setUp()" type="button" class="btn btn-primary button" id= "btn3">Begin Quiz</button><br>
-    <button onclick="setUp()" type="button" class="btn btn-primary button" id= "btn4">Begin Quiz</button>
+    <div>
+    <button onclick="remove()" style="width: 300px" type="button" class="btn btn-primary button" id="playbtn">Begin Quiz</button><br>
+    </div>
+    <button onclick="check1()" type="button" class="btn btn-primary button" id= "btn1">Begin Quiz</button><br>
+    <button onclick="check2()" type="button" class="btn btn-primary button" id= "btn2"></button><br>
+    <button onclick="check3()" type="button" class="btn btn-primary button" id= "btn3"></button><br>
+    <button onclick="check4()" type="button" class="btn btn-primary button" id= "btn4"></button>
     </div>
 
 

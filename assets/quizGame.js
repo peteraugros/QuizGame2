@@ -1,5 +1,7 @@
 //setting variables
-
+var getAnswer;
+var score = 0;
+var secondsLeft = 60;
 
 //array of questions
 var questions = [
@@ -26,13 +28,104 @@ var questions = [
     }
 ];
 
+
+function remove(){
+    //deleting play button
+    var play = document.getElementById("playbtn");
+    play.remove(play);
+
+    setUp();
+}
+
 //making buttons visible and setting up question in text area and setting up questions on buttons
 function setUp(){
+    //creating random number
+    var random = Math.floor(Math.random() * questions.length);
+
     //making buttons visible
+    document.getElementById("btn1").style.visibility = "visible";
     document.getElementById("btn2").style.visibility = "visible";
     document.getElementById("btn3").style.visibility = "visible";
     document.getElementById("btn4").style.visibility = "visible";
 
     //setting up question
-    document.getElementById("questionSpace").textContent = questions[0].title;
+    document.getElementById("questionSpace").textContent = questions[random].title;
+
+    //setting up answer on button
+    document.getElementById("btn1").textContent = questions[random].choices[0];
+    document.getElementById("btn2").textContent = questions[random].choices[1];
+    document.getElementById("btn3").textContent = questions[random].choices[2];
+    document.getElementById("btn4").textContent = questions[random].choices[3];
+
+    //storing answer in global variable
+    getAnswer = questions[random].answer;
+}
+
+//verifies input for button 1
+function check1() {
+
+    //grabbing the textContent from the selected button for comparison to right answer
+    var buttonId1 = document.getElementById("btn1").textContent;
+
+    //comparing user answer to correct answer
+    if (buttonId1 === getAnswer) {
+        score++;
+        secondsLeft += 3;
+    } else {
+        score--;
+        secondsLeft -= 15;
+    }
+
+    setUp();
+}
+
+function check2() {
+
+    //grabbing the textContent from the selected button for comparison to right answer
+    var buttonId2 = document.getElementById("btn2").textContent;
+
+    //comparing user answer to correct answer
+    if (buttonId2 === getAnswer) {
+        score++;
+        secondsLeft += 3;
+    } else {
+        score--;
+        secondsLeft -= 15;
+    }
+
+    setUp();
+}
+
+function check3() {
+
+    //grabbing the textContent from the selected button for comparison to right answer
+    var buttonId3 = document.getElementById("btn3").textContent;
+
+    //comparing user answer to correct answer
+    if (buttonId3 === getAnswer) {
+        score++;
+        secondsLeft += 3;
+    } else {
+        score--;
+        secondsLeft -= 15;
+    }
+
+    setUp();
+}
+
+function check4() {
+
+    //grabbing the textContent from the selected button for comparison to right answer
+    var buttonId4 = document.getElementById("btn4").textContent;
+
+    //comparing user answer to correct answer
+    if (buttonId4 === getAnswer) {
+        score++;
+        secondsLeft += 3;
+    } else {
+        score--;
+        secondsLeft -= 15;
+    }
+
+    setUp();
 }

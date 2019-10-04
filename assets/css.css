@@ -1,8 +1,7 @@
-#textarea {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
+#body{
+    background-color: #a8bfe6;
 }
+
 p{
     font-size: 50px;
 }
@@ -14,24 +13,33 @@ p{
     margin-top: 20px;
     
 }
-h1{
-    margin-top: 50px;
+#playbutton{
+    width: 300px;
 }
-
+h1{
+    margin-top: 150px;
+}
+#btn1{
+    visibility: hidden;
+    width: 300px;
+}
 #btn2 {
     visibility: hidden;
+    width: 300px;
 }
 #btn3 {
     visibility: hidden;
+    width: 300px;
 }
 #btn4 {
     visibility: hidden;
+    width: 300px;
 }
 #questionSpace{
     border: 3px solid black;
-    width: 500px;
+    width: 45%;
     height: 150px;
     margin-top: 50px;
     margin: 0 auto;
-    font-size: 25px;
+    font-size: 35px;
 }
