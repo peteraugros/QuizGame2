@@ -1,0 +1,29 @@
+#textarea {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+p{
+    font-size: 50px;
+}
+.button{
+    font-size: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+    
+}
+h1{
+    margin-top: 50px;
+}
+
+#btn2 {
+    visibility: hidden;
+}
+#btn3 {
+    visibility: hidden;
+}
+#btn4 {
+    visibility: hidden;
+}
