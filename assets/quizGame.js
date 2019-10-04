@@ -47,6 +47,7 @@ function setUp(){
     document.getElementById("btn2").style.visibility = "visible";
     document.getElementById("btn3").style.visibility = "visible";
     document.getElementById("btn4").style.visibility = "visible";
+    document.getElementById("score").style.visibility = "visible";
 
     //setting up question
     document.getElementById("questionSpace").textContent = questions[random].title;
@@ -75,7 +76,8 @@ function check1() {
         score--;
         secondsLeft -= 15;
     }
-
+    //printing score to DOM
+    document.getElementById("scoreText").textContent = score;
     setUp();
 }
 
@@ -92,7 +94,8 @@ function check2() {
         score--;
         secondsLeft -= 15;
     }
-
+    //printing score to DOM
+    document.getElementById("scoreText").textContent = score;
     setUp();
 }
 
@@ -109,7 +112,8 @@ function check3() {
         score--;
         secondsLeft -= 15;
     }
-
+    //printing score to DOM
+    document.getElementById("scoreText").textContent = score;
     setUp();
 }
 
@@ -126,6 +130,7 @@ function check4() {
         score--;
         secondsLeft -= 15;
     }
-
+    //printing score to DOM
+    document.getElementById("scoreText").textContent = score;
     setUp();
 }
