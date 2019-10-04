@@ -27,3 +27,11 @@ h1{
 #btn4 {
     visibility: hidden;
 }
+#questionSpace{
+    border: 3px solid black;
+    width: 500px;
+    height: 150px;
+    margin-top: 50px;
+    margin: 0 auto;
+    font-size: 25px;
+}
