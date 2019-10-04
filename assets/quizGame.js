@@ -2,6 +2,7 @@
 var getAnswer;
 var score = 0;
 var secondsLeft = 60;
+var interval;
 
 //array of questions
 var questions = [
@@ -60,6 +61,14 @@ function setUp(){
 
     //storing answer in global variable
     getAnswer = questions[random].answer;
+
+    //removing the question from the array
+    questions.splice(random, 1);
+
+    // if (questions.length === 0) {
+    //     clearInterval(interval);
+    //     // initialsDisplay();
+    // }
 }
 
 //verifies input for button 1
