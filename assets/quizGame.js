@@ -13,7 +13,7 @@ var questions = [
         answer: "<script>"
     },
     {
-        title: "Where is the correct place to insert a JavaScript?",
+        title: "Where is the correct place to insert a script tag?",
         choices: ["The <body> section", "The <head> or <body>", "the <head> section", "In the <style> tags"],
         answer: "The <head> or <body>"
     },
@@ -36,6 +36,7 @@ function remove(){
     play.remove(play);
 
     setUp();
+    timer();
 }
 
 //making buttons visible and setting up question in text area and setting up questions on buttons
@@ -65,10 +66,30 @@ function setUp(){
     //removing the question from the array
     questions.splice(random, 1);
 
-    // if (questions.length === 0) {
-    //     clearInterval(interval);
-    //     // initialsDisplay();
-    // }
+    if (questions.length === 0) {
+        clearInterval(interval);
+        // initialsDisplay();
+    }
+    
+}
+
+//sets timer
+function timer() {
+    interval = setInterval(function () {
+        secondsLeft--;
+        if (secondsLeft < 10) {
+            document.getElementById("timer").textContent = ":0" + secondsLeft;
+        }
+
+        if (secondsLeft >= 10 || secondsLeft < 0) {
+            document.getElementById("timer").textContent = ":" + secondsLeft;
+        }
+
+        if (secondsLeft === 0) {
+            clearInterval(interval);
+            alert("Time is up. You Lost");
+        }
+    }, 1000);
 }
 
 //verifies input for button 1
