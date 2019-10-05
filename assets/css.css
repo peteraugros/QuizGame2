@@ -35,6 +35,12 @@ h1{
     visibility: hidden;
     width: 300px;
 }
+#time {
+    visibility: hidden; 
+}
+#timer {
+    visibility: hidden;
+}
 #questionSpace{
     border: 3px solid black;
     width: 45%;
@@ -47,3 +53,11 @@ h1{
     font-size: 20px;
     visibility: hidden;
 }
+
+.initialSpace{
+    border: 3px solid black;
+    width: 45%;
+    height: 150px;
+    margin-top: 50px;
+    margin: 0 auto;
+    font-size: 35px;
