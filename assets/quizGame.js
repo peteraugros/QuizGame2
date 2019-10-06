@@ -7,6 +7,7 @@ var initialsInput = "";
 var questionCounter = 0;
 var getScore = document.getElementById("scoreText");
 var initialsText = document.querySelector(".initialSpace");
+var user = [];
 
 //array of questions
 var questions = [
@@ -181,93 +182,50 @@ function check4() {
     setUp();
 }
 
-function initials() {
-
-
-    //pulling from local storage
-    var lastuser = JSON.parse(localStorage.getItem("user"));
-    document.querySelector(".initialSpace").innerHTML = lastuser[initials] + " " + lastuser[score] + " points and " + " seconds.";
-
-    //getting and pasting initials for the hall of fame
+ function initials(){
+    //getting initials for the hall of fame
     initialsInput = document.querySelector(".input").value;
-    document.querySelector(".initialSpace").textContent = initialsInput + " " + score + " points and " + secondsLeft + " seconds.";
+    
+    //pasting initials for the hall of fame
+    document.querySelector("#postInitials").textContent = initialsInput;
+    //resetting the field input to null
     document.querySelector(".input").value = "";
+    
+    //pushing initials to array storage
+    user.push(initialsInput);
+  
+    //calling storeInitials function
+    storeInitials();
+ 
 
-    var user = {
-        initials: initialsInput,
-        score: score,
-        second: secondsLeft
-    };
+//end initials function   
+};
 
-    //updating local storage
+function storeInitials() {
+    // Stringify and set "todos" key in localStorage to todos array
     localStorage.setItem("user", JSON.stringify(user));
+
+    //calling getInitials function
+    getInitials();
 
 
 }
 
+function getInitials() {
+    
+    //Get stored initials from localStorag, Parsing the JSON string to an object
+    var storedInitials = JSON.parse(localStorage.getItem("user"));
+  
+    // If user was retrieved from localStorage, update the user array 
+    if (user !== null) {
+      user = storedInitials;
+    }
+
+    document.querySelector("#postInitials").textContent = user;
+        
+    
+
+ //end getInitials function
+  }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// var firstNameInput = document.querySelector("#first-name");
-// var lastNameInput = document.querySelector("#last-name");
-// var emailInput = document.querySelector("#email");
-// var passwordInput = document.querySelector("#password");
-// var signUpButton = document.querySelector("#sign-up");
-// var msgDiv = document.querySelector("#msg");
-// var userFirstNameSpan = document.querySelector("#user-first-name");
-// var userLastNameSpan = document.querySelector("#user-last-name");
-// var userEmailSpan = document.querySelector("#user-email");
-// var userPasswordSpan = document.querySelector("#user-password");
-
-// function displayMessage(type, message) {
-//   msgDiv.textContent = message;
-//   msgDiv.setAttribute("class", type);
-// }
-
-// signUpButton.addEventListener("click", function(event) {
-//   event.preventDefault();
-
-//   // create user object from submission
-//   var user = {
-//     firstName: firstNameInput.value.trim(),
-//     lastName: lastNameInput.value.trim(),
-//     email: emailInput.value.trim(),
-//     password: passwordInput.value.trim()
-//   };
-
-//     // set new submission
-//     localStorage.setItem("user", JSON.stringify(user));
-
-//     // get most recent submission
-//     var lastUser = JSON.parse(localStorage.getItem("user"));
-//     userFirstNameSpan.textContent = lastUser.firstName;
-//     userLastNameSpan.textContent = lastUser.lastName;
-//     userEmailSpan.textContent = lastUser.email;
-//     userPasswordSpan.textContent = lastUser.password;
-//   }
-// });
