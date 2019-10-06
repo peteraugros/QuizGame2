@@ -185,14 +185,16 @@ function check4() {
  function initials(){
     //getting initials for the hall of fame
     initialsInput = document.querySelector(".input").value;
+    console.log(user);
+   
+    //pushing initials to array storage
+    user.push(initialsInput);
     
     //pasting initials for the hall of fame
     document.querySelector("#postInitials").textContent = initialsInput;
     //resetting the field input to null
     document.querySelector(".input").value = "";
     
-    //pushing initials to array storage
-    user.push(initialsInput);
   
     //calling storeInitials function
     storeInitials();
@@ -208,7 +210,7 @@ function storeInitials() {
     //calling getInitials function
     getInitials();
 
-
+//end storeInitials function
 }
 
 function getInitials() {
